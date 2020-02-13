@@ -1,14 +1,15 @@
 const router = require("express").Router();
 const Workout = require("../models/workout.js");
 
+///////////INDEX.HTML/////////////////////////
+
 //Create a new workout
-router.post("/createNew"), (req, res) => {
+router.post("/exercise"), (req, res) => {
     Workout.create(body)
 }
 
-//Continue with last workout
-//Fix the IDGOES HERE on 35
-router.get("/continue/:id", (req, res) => {
+//Continue last workout
+router.get("/exercise/:id", (req, res) => {
     db.Workout.find({_id: mongoose.objectId(id)})
     .then(dbWorkout => {
         res.json(dbWorkout);
@@ -17,6 +18,14 @@ router.get("/continue/:id", (req, res) => {
         res.json(err);
     });
 });
+
+/////////EXERCISE.HTML/////////////////////////
+//Add Exercise button
+
+
+//Complete Button
+
+
 
 //Updates an existing workout plan
 router.put("/updateExisting", ({body}, res) => {
