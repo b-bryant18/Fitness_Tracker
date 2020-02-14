@@ -3,12 +3,11 @@ const logger = require("morgan");
 const mongoose = require("mongoose");
 const app = express();
 
+const PORT = process.env.PORT || 3000;
+
 const html = require ("./routes/html-routes")(app);
 const api = require("./routes/api-routes")(app);
 
-const PORT = process.env.PORT || 3000;
-
-//What does this do?
 app.use(logger("dev"));
 
 app.use(express.urlencoded({ extended: true }));
