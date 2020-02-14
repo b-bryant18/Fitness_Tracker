@@ -4,9 +4,6 @@ Use this app to create and record workout routines. Record information like the 
 
 ## Installation
 
-
-
-
 ```bash
 Install MongoDB and Robo3T
 npm install express path mongoose
@@ -19,6 +16,7 @@ Ensure that mongod is running in a background terminal before starting your serv
 ```
 
 ## Images
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+![Home page](./images/screenshot1.png)
+![Add a Workout](./images/screenshot2.png)
+![Workout Dashboard page](./images/screenshot3.png)
 
-Please make sure to update tests as appropriate.
