@@ -3,7 +3,7 @@ const Workout = require("../models");
 
 //Look at api.js for methods 
 
-module.exports = function router () {
+module.exports = function (router) {
     //Create new workout
     router.post("/api/workouts", (req, res) => {
         Workout.create({})
@@ -14,6 +14,12 @@ module.exports = function router () {
                 res.json(err)
             });
     });
+
+    // router.post("/api/workouts", (req, res) => {
+    //     Workout.create(req.body).then(res => {
+    //         res.json(res);
+    //     })
+    // })
 
     //Get all workouts
     router.get("/api/workouts", (req, res) => {
@@ -34,8 +40,7 @@ module.exports = function router () {
             });
     });
 
-    //stats
-    //should be app.get
+    //Get data from stats page
     router.get("/api/workouts/range"), (req, res) => {
         Workout.find({}).limit(5).then(dbWorkouts => {
             res.json(dbWorkouts)
@@ -44,18 +49,4 @@ module.exports = function router () {
         });
     };
 
-    // //Updates an existing workout plan
-    // router.put("/updateExisting", ({ body }, res) => {
-    //     db.Workout.create(body)
-    //         .then(({ _id }) => db.Workout.findOneAndUpdate({}, { $push: { workouts: _id } }, { new: true }))
-    //         .then(dbWorkout => {
-    //             res.json(dbWorkout);
-    //         })
-    //         .catch(err => {
-    //             res.json(err);
-    //         });
-    // });
-
 }
-
-//router.post, router.put, router.delete just like app.get
