@@ -5,8 +5,8 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-const html = require ("./routes/html-routes")(app);
-const api = require("./routes/api-routes")(app);
+app.use(require ("./routes/html-routes"));
+app.use(require("./routes/api-routes"));
 
 app.use(logger("dev"));
 
@@ -18,8 +18,7 @@ app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/userdb", { useNewUrlParser: true, useFindAndModify: false });
 
-// app.use(api);
-// app.use(html);
+
 
 app.listen(PORT, () => {
     console.log(`App listening on PORT ${PORT}`);
