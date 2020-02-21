@@ -8,16 +8,16 @@
     "start": "node server.js"
   },
   "respository": {
-"type": "git",
-"url": "git+https://github.com/b-bryant18/Fitness_Tracker.git"
-  }, 
+    "type": "git",
+    "url": "git+https://github.com/b-bryant18/Fitness_Tracker.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
     "logger": "0.0.1",
-    "mongoose": "^5.8.11",
+    "mongoose": "^5.9.0",
     "morgan": "^1.9.1"
   }
 }
